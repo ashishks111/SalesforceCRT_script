@@ -24,22 +24,22 @@ Create Lead via Sales Application
     #VerifyText                  Company                     anchor=We hit a snag.
     Picklist                    Salutation                  Mr.
     ${curr_time}                Get Time
-    TypeText                    First Name                  Gaurav
-    TypeText                    Last Name                   Sonkar_${curr_time}                        #add current time to make it unique
+    TypeText                    First Name                  Ashish
+    TypeText                    Last Name                   Sharma_${curr_time}                        #add current time to make it unique
     Picklist                    Lead Status                 Open - Not Contacted
     ${rand_phone}=              Generate Random String      10                          [NUMBERS]
     ${phone}=                   SetVariable                 +91${rand_phone}                #generating a random string of numbers of size 10 and setting it as phone
     TypeText                    Phone                       ${phone}                    anchor=First Name
     TypeText                    Company                     Company at ${curr_time}                    Last Name
     TypeText                    Title                       Manager                     Address Information
-    ${rand_email}               Generate Random String      5                        chars=GauravSonkar
+    ${rand_email}               Generate Random String      5                        chars=AshishSharma
     TypeText                    Email                       ${rand_email}@gmail.com        Rating
     TypeText                    Website                     https://www.growmore.com/
     Picklist                    Lead Source                 Web
     ClickText                   Save                        partial_match=False
     UseModal                    Off
     ${title_of_page}=           Get Title  
-    Should Match Regexp         ${title_of_page}            ^Gaurav Sonkar                             #title of page should start with \"Gaurav Sonkar"
+    Should Match Regexp         ${title_of_page}            ^Ashish Sharma                             #title of page should start with \"Gaurav Sonkar"
     Clicktext                   Details
     ${phone_onrecord}           GetFieldValue               Phone
     Should Match                ${phone_onrecord}           +91${rand_phone}                           #comparing phone number entered on form with phone number on details page
