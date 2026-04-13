@@ -17,7 +17,7 @@ Create Lead via Sales Application
     VerifyText                  Lead Information
     VerifyText                  Lead Owner
     ${lead_owner_name}          GetFieldValue               Lead Owner
-    Should Be Equal As Strings                              ${lead_owner_name}          Gaurav Sonkar        #validating owner name as logged in user
+    Should Be Equal As Strings                              ${lead_owner_name}          Ashish Sharma        #validating owner name as logged in user
     #ClickText                   Save                        partial_match=false
     #VerifyText                  We hit a snag.
     #VerifyText                  Name                        anchor=We hit a snag.
@@ -39,7 +39,7 @@ Create Lead via Sales Application
     ClickText                   Save                        partial_match=False
     UseModal                    Off
     ${title_of_page}=           Get Title  
-    Should Match Regexp         ${title_of_page}            ^Ashish Sharma                             #title of page should start with \"Gaurav Sonkar"
+    Should Match Regexp         ${title_of_page}            ^Ashish Sharma                             #title of page should start with \"Ashish Sharma"
     Clicktext                   Details
     ${phone_onrecord}           GetFieldValue               Phone
     Should Match                ${phone_onrecord}           +91${rand_phone}                           #comparing phone number entered on form with phone number on details page
